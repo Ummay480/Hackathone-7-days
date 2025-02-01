@@ -1,11 +1,9 @@
-import { createClient } from 'next-sanity'
+import { createClient } from "@sanity/client";
 
-import { apiVersion, dataset, projectId } from '../env'
-
-export const client = createClient({
-  projectId:"12q1kpjz",
-  dataset:"production",
+export const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: "2025-01-17", // Ensure it's used inside the config
   useCdn: true,
-  token: process.env.SANITY_API_TOKEN,
-  apiVersion: '2025-01-17',
-})
+  token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN, // Use public env variables
+});
