@@ -1,15 +1,14 @@
 import React from "react";
 
-interface ChefCardProps {
+interface ChefCardProps{
   image: string;
   name: string;
-  position: string;
+  position?: string; // Add this line
   experience: string;
   specialty: string;
   description: string;
   available: boolean;
 }
-
 const ChefCard: React.FC<ChefCardProps> = ({
   image,
   name,
