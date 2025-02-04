@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { createClient } from "@sanity/client";
-import ChefCard from "@/components/ProductCard"; // Assuming the ChefCard component is correctly named and located
+import ChefCard from "@/components/ChefCard"; // Assuming the ChefCard component is correctly named and located
 
 // Initialize Sanity client
 const client = createClient({
