@@ -13,16 +13,15 @@ const client = createClient({
 });
 
 // Define the chef type for TypeScript
-type Chef = {
-  _id: string;
-  name: string;
-  position?: string; // Marked as optional
-  experience: number;
-  specialty: string;
-  imageUrl: string;
-  description: string;
-  available: boolean;
-};
+<ChefCard
+  image={chef.imageUrl}
+  name={chef.name}
+  position={chef.position || "Position not specified"}
+  experience={`${chef.experience} years`}
+  specialty={chef.specialty}
+  description={chef.description}
+  available={chef.available}
+/>
 
 const Chef: React.FC = () => {
   const [chefs, setChefs] = useState<Chef[]>([]);
